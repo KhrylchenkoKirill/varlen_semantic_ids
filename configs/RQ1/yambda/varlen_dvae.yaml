@@ -1,0 +1,54 @@
+data_dir: "./data/yambda"
+train_interactions_file: "dvae_train_interactions.parquet"
+holdout_interactions_file: "dvae_holdout_interactions.parquet"
+
+device: "cuda"
+seed: 42
+mode: "train"
+
+# results
+metrics_json_path: "./results/RQ1/yambda/varlen_dvae_3.json"
+
+num_epochs: 5
+# architecture
+vocab_size: 4096
+embed_dim: 128
+hidden_size: 128
+maxlen: 5
+shared_codebooks: true
+init_logit_scale: 5.0
+init_gamma: 0.2
+dropout: 0.1
+codebook_dropout: 0.1
+decoder_hidden_mul: 2
+decoder_num_layers: 2
+varlen: true
+length_cost: 0.3
+
+# optimization
+batch_num_tokens: 8192
+shuffle: true
+drop_last: True
+
+lr: 1e-3
+weight_decay: 1e-5
+
+tau_start: 1.0
+tau_end: 0.5
+
+beta_start: 0.0
+beta_end: 0.002
+free_bits: 2.0
+
+# logging
+train_sample_frac_for_eval: 0.1111111111  # 1/9
+log_every_steps: 20
+eval_every_steps: 500
+eval_detail: false
+enable_progress_bar: true
+progress_bar_every: 20
+
+# evaluation
+eval_batch_size: 512
+per_step: true
+expected_holdout_frac: 0.1

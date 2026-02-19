@@ -1,0 +1,55 @@
+data_dir: "./data/yambda"
+train_interactions_file: "dvae_train_interactions.parquet"
+holdout_interactions_file: "dvae_holdout_interactions.parquet"
+
+device: "cuda"
+seed: 42
+mode: "train"
+
+# results
+metrics_json_path: ./results/RQ1/yambda/reinforce.json
+
+num_epochs: 5
+
+# architecture
+vocab_size: 4096
+embed_dim: 128
+hidden_size: 128
+maxlen: 5
+shared_codebooks: true
+init_logit_scale: 5.0
+init_gamma: 0.2
+dropout: 0.1
+codebook_dropout: 0.1
+decoder_hidden_mul: 2
+decoder_num_layers: 2
+
+varlen: false
+
+# REINFORCE regularization
+schedule_mode: "steps"
+schedule_steps: 3000
+sender_entropy_coeff_start: 0.03
+sender_entropy_coeff_end: 0.001
+baseline_momentum: 0.99
+
+# optimization
+batch_num_tokens: 8192
+shuffle: true
+drop_last: True
+
+lr: 1e-3
+weight_decay: 1e-5
+
+# logging
+train_sample_frac_for_eval: 0.1111111111  # 1/9
+log_every_steps: 20
+eval_every_steps: 500
+eval_detail: false
+enable_progress_bar: true
+progress_bar_every: 20
+
+# evaluation
+eval_batch_size: 512
+per_step: true
+expected_holdout_frac: 0.1

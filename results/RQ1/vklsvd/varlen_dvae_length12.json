@@ -1,0 +1,346 @@
+{
+  "meta": {
+    "varlen": true,
+    "maxlen": 5,
+    "vocab_size": 4096,
+    "batch_size": 512,
+    "per_step": true,
+    "expected_holdout_frac": 0.1
+  },
+  "sanity": {
+    "train_items": 809712,
+    "holdout_items": 89968,
+    "cold_items": 188894,
+    "holdout_frac_of_train": 0.1111111111111111,
+    "cold_minus_holdout": 98926
+  },
+  "train": {
+    "n_items": 809712,
+    "recon_head_longtail": {
+      "head": {
+        "uniform": {
+          "@last": 0.12102544208154756,
+          "@varlen": 0.16284023896966485
+        },
+        "unigram": {
+          "@last": 0.11484142057926923,
+          "@varlen": 0.15127535072319534
+        }
+      },
+      "longtail": {
+        "uniform": {
+          "@last": 0.13989411947666736,
+          "@varlen": 0.18430475971580412
+        },
+        "unigram": {
+          "@last": 0.13569424825045676,
+          "@varlen": 0.1809685232622947
+        }
+      }
+    },
+    "recon": {
+      "uniform": {
+        "@1": 0.4139496947935697,
+        "@2": 0.26441864667055714,
+        "@3": 0.19406890470574975,
+        "@4": 0.15858104365738881,
+        "@5": 0.13926349506999672,
+        "@varlen": 0.18358737766079608
+      },
+      "unigram": {
+        "@1": 0.38895889211704326,
+        "@2": 0.2416319094013763,
+        "@3": 0.17824703070713357,
+        "@4": 0.14686897874177526,
+        "@5": 0.12992281358859234,
+        "@varlen": 0.17275034739655928
+      }
+    },
+    "codebook": {
+      "perplexity@1": 2890.8204042913526,
+      "codebook_usage@1": 0.99609375,
+      "perplexity@2": 3721.1571147003433,
+      "codebook_usage@2": 0.998046875,
+      "perplexity@3": 3755.7755927457683,
+      "codebook_usage@3": 0.9990234375,
+      "perplexity@4": 3832.2930706967986,
+      "codebook_usage@4": 0.998779296875,
+      "perplexity@5": 3870.559519616568,
+      "codebook_usage@5": 0.997802734375,
+      "perplexity_macro": 3614.121140410166,
+      "codebook_usage_macro": 0.99794921875,
+      "perplexity_micro": 3838.915374030582,
+      "codebook_usage_micro": 0.999755859375,
+      "total_tokens_micro": 2532923
+    },
+    "length": {
+      "mean_uniform": 3.128177673049183,
+      "mean_unigram": 2.935048693820868
+    },
+    "popularity_length": {
+      "pop_stats_by_length": {
+        "1": {
+          "count": 75828,
+          "pop_mean": 132.43134462203935,
+          "pop_median": 51.0,
+          "pop_std": 307.99063077717983,
+          "pop_min": 16.0,
+          "pop_max": 12319.0
+        },
+        "2": {
+          "count": 180480,
+          "pop_mean": 120.06511524822695,
+          "pop_median": 49.0,
+          "pop_std": 229.89972295899858,
+          "pop_min": 16.0,
+          "pop_max": 5846.0
+        },
+        "3": {
+          "count": 232436,
+          "pop_mean": 99.8181348844413,
+          "pop_median": 45.0,
+          "pop_std": 154.95794029153964,
+          "pop_min": 16.0,
+          "pop_max": 2951.0
+        },
+        "4": {
+          "count": 206013,
+          "pop_mean": 89.72402712450184,
+          "pop_median": 43.0,
+          "pop_std": 131.56495412658833,
+          "pop_min": 16.0,
+          "pop_max": 2719.0
+        },
+        "5": {
+          "count": 114955,
+          "pop_mean": 77.94290809447175,
+          "pop_median": 39.0,
+          "pop_std": 109.78303063380088,
+          "pop_min": 16.0,
+          "pop_max": 2173.0
+        }
+      }
+    },
+    "head_longtail": {
+      "mean_length_head": 2.750979232872663,
+      "mean_length_longtail": 3.1412202133776272,
+      "count_head": 27062,
+      "count_longtail": 782650
+    },
+    "distinctness": {
+      "n_items": 809712,
+      "n_unique_codes": 644629,
+      "unique_codes_per_item": 0.796121336969194
+    }
+  },
+  "holdout": {
+    "n_items": 89968,
+    "recon_head_longtail": {
+      "head": {
+        "uniform": {
+          "@last": 0.1386903126358255,
+          "@varlen": 0.17892851315849564
+        },
+        "unigram": {
+          "@last": 0.1371454883935919,
+          "@varlen": 0.1780838064536727
+        }
+      },
+      "longtail": {
+        "uniform": {
+          "@last": 0.14107622468552342,
+          "@varlen": 0.18530325203069006
+        },
+        "unigram": {
+          "@last": 0.138460966333163,
+          "@varlen": 0.18285089661360757
+        }
+      }
+    },
+    "recon": {
+      "uniform": {
+        "@1": 0.41871074576109046,
+        "@2": 0.2687107238314997,
+        "@3": 0.19730269253815744,
+        "@4": 0.16097950248474036,
+        "@5": 0.14099830947650743,
+        "@varlen": 0.18509507912790651
+      },
+      "unigram": {
+        "@1": 0.41506240162757413,
+        "@2": 0.2643684910987993,
+        "@3": 0.19355040970118315,
+        "@4": 0.15774637785123974,
+        "@5": 0.13810418005771632,
+        "@varlen": 0.18155795559231266
+      }
+    },
+    "codebook": {
+      "perplexity@1": 2807.623727435012,
+      "codebook_usage@1": 0.978515625,
+      "perplexity@2": 3636.837035944407,
+      "codebook_usage@2": 0.99755859375,
+      "perplexity@3": 3658.5080006668163,
+      "codebook_usage@3": 0.997802734375,
+      "perplexity@4": 3648.102538804066,
+      "codebook_usage@4": 0.995361328125,
+      "perplexity@5": 3333.634891006487,
+      "codebook_usage@5": 0.94287109375,
+      "perplexity_macro": 3416.941238771358,
+      "codebook_usage_macro": 0.982421875,
+      "perplexity_micro": 3811.4838381148033,
+      "codebook_usage_micro": 0.998291015625,
+      "total_tokens_micro": 285511
+    },
+    "length": {
+      "mean_uniform": 3.173472790325449,
+      "mean_unigram": 3.156797170188171
+    },
+    "popularity_length": {
+      "pop_stats_by_length": {
+        "1": {
+          "count": 7968,
+          "pop_mean": 98.90298694779116,
+          "pop_median": 47.0,
+          "pop_std": 206.21399777716536,
+          "pop_min": 16.0,
+          "pop_max": 9892.0
+        },
+        "2": {
+          "count": 19087,
+          "pop_mean": 103.25053701472206,
+          "pop_median": 46.0,
+          "pop_std": 182.90025075284342,
+          "pop_min": 16.0,
+          "pop_max": 4087.0
+        },
+        "3": {
+          "count": 25821,
+          "pop_mean": 102.87777390496107,
+          "pop_median": 45.0,
+          "pop_std": 181.48701808269922,
+          "pop_min": 16.0,
+          "pop_max": 3996.0
+        },
+        "4": {
+          "count": 23554,
+          "pop_mean": 103.39033709773287,
+          "pop_median": 44.0,
+          "pop_std": 187.9416423697569,
+          "pop_min": 16.0,
+          "pop_max": 5108.0
+        },
+        "5": {
+          "count": 13538,
+          "pop_mean": 93.87686512040183,
+          "pop_median": 41.0,
+          "pop_std": 158.59621070768134,
+          "pop_min": 16.0,
+          "pop_max": 2629.0
+        }
+      }
+    },
+    "head_longtail": {
+      "mean_length_head": 3.223281143635126,
+      "mean_length_longtail": 3.171791336320809,
+      "count_head": 2938,
+      "count_longtail": 87030
+    },
+    "distinctness": {
+      "n_items": 89968,
+      "n_unique_codes": 81521,
+      "unique_codes_per_item": 0.9061110617108306
+    }
+  },
+  "cold": {
+    "n_items": 188894,
+    "recon": {
+      "uniform": {
+        "@1": 0.4955192433520141,
+        "@2": 0.33026564539912057,
+        "@3": 0.24510128958243652,
+        "@4": 0.19935094462656067,
+        "@5": 0.17416355570437994,
+        "@varlen": 0.2092832966600667
+      },
+      "unigram": {
+        "@1": 0.4528308113755725,
+        "@2": 0.29494064578151086,
+        "@3": 0.21713631820253845,
+        "@4": 0.17632486271632375,
+        "@5": 0.15414381572263464,
+        "@varlen": 0.19343670258989948
+      }
+    },
+    "codebook": {
+      "perplexity@1": 2314.8484095577123,
+      "codebook_usage@1": 0.98583984375,
+      "perplexity@2": 3106.572172771544,
+      "codebook_usage@2": 0.99853515625,
+      "perplexity@3": 3393.065803670655,
+      "codebook_usage@3": 0.998779296875,
+      "perplexity@4": 3609.768673756967,
+      "codebook_usage@4": 0.998779296875,
+      "perplexity@5": 3665.691038211264,
+      "codebook_usage@5": 0.998046875,
+      "perplexity_macro": 3217.9892195936286,
+      "codebook_usage_macro": 0.99599609375,
+      "perplexity_micro": 3383.2149937708996,
+      "codebook_usage_micro": 0.999755859375,
+      "total_tokens_micro": 686910
+    },
+    "length": {
+      "mean_uniform": 3.6364839539635985,
+      "mean_unigram": 3.4237788288510864
+    },
+    "popularity_length": {
+      "pop_stats_by_length": {
+        "1": {
+          "count": 8078,
+          "pop_mean": 8.57860856647685,
+          "pop_median": 2.0,
+          "pop_std": 38.01119255411422,
+          "pop_min": 1.0,
+          "pop_max": 1630.0
+        },
+        "2": {
+          "count": 25962,
+          "pop_mean": 7.595370156382405,
+          "pop_median": 2.0,
+          "pop_std": 40.87651811487465,
+          "pop_min": 1.0,
+          "pop_max": 2549.0
+        },
+        "3": {
+          "count": 45715,
+          "pop_mean": 6.925232418243465,
+          "pop_median": 1.0,
+          "pop_std": 34.76920022202655,
+          "pop_min": 1.0,
+          "pop_max": 2071.0
+        },
+        "4": {
+          "count": 55932,
+          "pop_mean": 5.950529214045627,
+          "pop_median": 1.0,
+          "pop_std": 27.683490449354903,
+          "pop_min": 1.0,
+          "pop_max": 1247.0
+        },
+        "5": {
+          "count": 53207,
+          "pop_mean": 4.6634089499501945,
+          "pop_median": 1.0,
+          "pop_std": 27.255526379182037,
+          "pop_min": 1.0,
+          "pop_max": 1734.0
+        }
+      }
+    },
+    "distinctness": {
+      "n_items": 188894,
+      "n_unique_codes": 172813,
+      "unique_codes_per_item": 0.9148675977002976
+    }
+  }
+}

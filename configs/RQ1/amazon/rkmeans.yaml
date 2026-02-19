@@ -1,0 +1,17 @@
+data_dir: ./data/amazon
+device: cuda
+mode: train
+
+# outputs
+metrics_json_path: ./results/RQ1/amazon/rkmeans.json
+
+# rkmeans
+num_levels: 5
+num_clusters: 4096
+num_iters: 40
+fit_batch_size: 128
+
+# eval
+eval_batch_size: 512
+per_step: true
+expected_holdout_frac: 0.1
